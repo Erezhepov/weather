@@ -1,0 +1,19 @@
+.info{
+  position: absolute;
+  bottom: 17%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  column-gap: 2em;
+  color: #ffffff;
+  .degree{
+    font-size: 7.94em;
+  }
+  .city{
+    font-size: 3.33em;
+  }
+  img{
+    width: 10em;
+    margin-left: -2em;
+  }
+}

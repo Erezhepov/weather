@@ -1,0 +1,15 @@
+.header{
+  padding: 1em 0;
+}
+.items{
+  display: flex;
+  justify-content: space-between;
+}
+.links{
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+.logo{
+  width: 100px;
+}
