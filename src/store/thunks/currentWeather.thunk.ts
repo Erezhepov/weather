@@ -8,7 +8,7 @@ export const currentWeather = createAsyncThunk<ICurrentWeatherResponse, string, 
         try {
             const response = await instance.get(`weather?appid=faffa70c89f89ad08683cf373e1243ce&q=${cityName}`)
             const data = response.data
-            console.log(data)
+            // console.log(data)
             return data
         }catch (e){
             return rejectWithValue('Ошибка при получении текущей погоды')

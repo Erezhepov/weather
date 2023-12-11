@@ -1,19 +1,39 @@
 .info{
-  position: absolute;
-  bottom: 17%;
-  left: 5%;
+  padding: 24px;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.50);
+  border-radius: 30px;
+  background: #f3f3f3;
+  width: 58%;
+  position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 2em;
-  color: #ffffff;
-  .degree{
-    font-size: 7.94em;
+  color: #2a2a2a;
+  .degree, .feelsLike{
+    background: linear-gradient(80deg, #292929 -2.93%, rgba(255, 255, 255, 0.00) 212.44%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .city{
-    font-size: 3.33em;
+  .degree{
+    line-height: 1.1;
+    font-weight: 600;
+    font-size: 5em;
+  }
+  .feelsLike{
+    margin-top: -11px;
+    padding-left: .5em;
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1;
+    span{
+      font-size: 1.55em;
+    }
   }
   img{
     width: 10em;
     margin-left: -2em;
+    -webkit-filter: drop-shadow(3px 3px 3px #000);
+    filter: drop-shadow(3px 3px 3px #000);
   }
 }

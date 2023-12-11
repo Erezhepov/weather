@@ -1,41 +1,37 @@
 .content{
-  margin-top: 3em;
-  color: #fff;
+  width: 36%;
   h3{
     font-size: 1em;
     margin: 0;
     font-weight: 400;
   }
   .body{
-    margin-top: 2.5em;
     display: flex;
-    flex-direction: column;
-    row-gap: 1.66em;
-    p{
-      display: flex;
-      justify-content: space-between;
-      position: relative;
-      &::before{
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        right: -2em;
-        top: 50%;
-        transform: translateY(-50%);
-        background-size: contain !important;
-        text-align: center;
-      }
-      &.maxTemp::before{background: url("./../../../public/images/max_temp.svg") no-repeat;}
-      &.minTemp::before{background: url("./../../../public/images/min_temp.svg") no-repeat;}
-      &.humidity::before{background: url("./../../../public/images/humidity.svg") no-repeat;}
-      &.cloudy::before{background: url("./../../../public/images/cloudy.svg") no-repeat;}
-      &.wind::before{background: url("./../../../public/images/wind.svg") no-repeat;}
-      &.feelsLike::before{background: url("./../../../public/images/feels_like.svg") no-repeat;}
-    }
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1.2em;
   }
   .description{
     text-transform: uppercase;
     font-weight: 500;
+  }
+  .item{
+    text-align: center;
+    flex: 0 1 48%;
+    svg{
+      height: 60px;
+      width: 60px;
+    }
+    p{
+      margin-top: .6em;
+      line-height: .8;
+      text-align: center;
+      font-size: 16px;
+      span{
+        display: block;
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+    }
   }
 }
