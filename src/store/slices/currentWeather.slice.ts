@@ -1,6 +1,6 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 import {ICurrentWeatherState} from "../../models/currentWeather.models";
-import {currentWeather} from "../thunks/currentWeather.thunk";
+import {currentWeatherThunk} from "../thunks/currentWeather.thunk";
 
 const initialState: ICurrentWeatherState = {
     loading: false,
@@ -30,11 +30,15 @@ export const currentWeatherSlice = createSlice({
         }
     },
     extraReducers: builder => {
-        builder.addCase(currentWeather.pending, state => {
+        builder.addCase(currentWeatherThunk.pending, state => {
             state.loading = true
             state.error = null
         })
-        builder.addCase(currentWeather.fulfilled, (state, {payload}) => {
+        builder.addCase(currentWeatherThunk.rejected, (state, {payload}) => {
+            state.loading = false
+            state.error = payload || null
+        })
+        builder.addCase(currentWeatherThunk.fulfilled, (state, {payload}) => {
             const K: number = 273.15
             state.loading = false
             state.error = null
