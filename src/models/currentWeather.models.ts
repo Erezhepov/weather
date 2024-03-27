@@ -7,6 +7,7 @@ export interface ICurrentWeatherState {
     temp: number | null
     feels_like: number | null
     humidity: number | null
+    pressure: number | null
     wind: number | null
     cloudy: number | null
     weather: {

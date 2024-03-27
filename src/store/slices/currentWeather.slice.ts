@@ -11,6 +11,7 @@ const initialState: ICurrentWeatherState = {
     temp: null,
     feels_like: null,
     humidity: null,
+    pressure: null,
     wind: null,
     cloudy: null,
     weather: {
@@ -48,6 +49,7 @@ export const currentWeatherSlice = createSlice({
             state.temp_max = payload.main.temp_max - K
             state.feels_like = payload.main.feels_like - K
             state.humidity = payload.main.humidity
+            state.pressure = payload.main.pressure
             state.wind = payload.wind.speed
             state.cloudy = payload.clouds.all
             state.weather.main = payload.weather[0].main

@@ -8,8 +8,10 @@ const SearchBlock = () => {
     const changeData = (e: ChangeEvent<HTMLInputElement>) => setData(e.target.value)
     const dispatch = useAppDispatch()
     const send = () => {
-        dispatch(currentWeatherThunk(data))
-        setData('')
+        if (data.length > 0){
+            dispatch(currentWeatherThunk(data))
+            setData('')
+        }
     }
     const sendEnter = (e:  React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && data.length){

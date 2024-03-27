@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import s from './HourlyForecast.module.scss'
 import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
-import {hourlyWeatherThunk} from "../../store/thunks/hourlyWeather.thunk";
+import {hourlyForecastThunk} from "../../store/thunks/hourlyForecast.thunk";
 import Icon from "../imageIcon/Icon";
 
 const HourlyForecast = () => {
@@ -9,7 +9,7 @@ const HourlyForecast = () => {
     const {list} = useAppSelector(state => state.hourlyWeather)
     const dispatch = useAppDispatch()
     useEffect(() => {
-        name && dispatch(hourlyWeatherThunk(name))
+        name && dispatch(hourlyForecastThunk(name))
     }, [name]);
     return (
         <div className={s.body}>

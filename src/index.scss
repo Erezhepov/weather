@@ -3,11 +3,24 @@
 @import 'react-toastify/dist/ReactToastify.css';
 
 :root{
-	--color: #292929;
+	--primary-color: #292929;
+	--secondary-color: #ffffff;
+	--background-color: #ffffff;
+	--foreground-color: #4CBB17;
+	--toggle-bg: #ffffff;
+	--toggle-fg: #4CBB17;
 	--font_family: "Poppins", sans-serif;
 }
 
-$color: #292929;
+[data-theme='dark']{
+	--primary-color: #ffffff;
+	--secondary-color: #292929;
+	--background-color: #292929;
+	--foreground-color: #003cfa;
+	--toggle-bg: #292929;
+	--toggle-fg: #003cfa;
+}
+
 $font_family: "Poppins", sans-serif;
 
 //html,
@@ -30,20 +43,24 @@ h6,
 p {
 	margin: 0;
 }
-body {
+body{
+	margin: 0;
+}
+.wrapper {
+	transition: all .3s;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
-	color: $color;
+	color: var(--primary-color)
 }
 *{
 	box-sizing: border-box;
 }
 a,
 button {
-	color: $color;
+	color: var(--primary-color);
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -57,24 +74,24 @@ input {
 	outline: none;
 	border: none;
 	font-size: 1.1em;
-	color: #2a2a2a;
+	color: var(--primary-color);
 	border-bottom: 2px solid rgba(255, 255, 255, 0.7);
 	&::placeholder {
-		color: #292929;
+		color: var(--primary-color);
 	}
 }
 button {
 	padding: 7px 1em;
 	background-color: transparent;
-	border: 2px solid #2a2a2a;
+	border: 2px solid var(--primary-color);
 	border-radius: 0.3em;
-	color: #2a2a2a;
+	color: var(--primary-color);
 	font-weight: 500;
 	font-size: 1em;
 	font-family: $font_family;
 }
 .wrapper {
-	background: linear-gradient(113deg, #FFF 0.28%, rgba(70, 97, 115, 0.00) 178.65%);
+	background: var(--background-color);
 	position: relative;
 	//&::before {
 	//	content: "";

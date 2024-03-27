@@ -1,17 +1,17 @@
-export interface HourlyWeatherState extends HourlyWeatherResponse{
+export interface HourlyForecastState extends HourlyForecastResponse{
     loading: boolean
     error: string | null
 }
 
-export interface HourlyWeatherResponse {
+export interface HourlyForecastResponse {
     city: {
         name: string | null
     }
     message: string | null
-    list: HourlyWeatherInfo[]
+    list: HourlyForecastInfo[]
 }
 
-export interface HourlyWeatherInfo {
+export interface HourlyForecastInfo {
     main: {
         feels_like: number
         humidity: number

@@ -9,15 +9,16 @@ import {toast, ToastContainer} from "react-toastify";
 
 const HomePage = () => {
     const dispatch: any = useAppDispatch()
-    const {currentWeather, hourlyWeather} = useAppSelector(state => state)
+    const currentWeatherError = useAppSelector(state => state.currentWeather.error)
+    const hourlyWeatherError = useAppSelector(state => state.hourlyWeather.error)
     useEffect(() => {
         dispatch(currentWeatherThunk('astana'))
     }, []);
 
     useEffect(() => {
-        currentWeather.error && toast.error(currentWeather.error)
-        hourlyWeather.error && toast.error(hourlyWeather.error)
-    }, [currentWeather.error, hourlyWeather.error]);
+        currentWeatherError && toast.error(currentWeatherError)
+        hourlyWeatherError && toast.error(hourlyWeatherError)
+    }, [currentWeatherError, hourlyWeatherError]);
     return (
         <>
             <div className={s.homePage}>
@@ -28,6 +29,7 @@ const HomePage = () => {
                     />
                     <CurrentWeatherAbout />
                     <CurrentWeather />
+                    {/*<DailyForecast />*/}
                     <HourlyForecast />
                 </div>
             </div>

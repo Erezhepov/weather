@@ -18,9 +18,18 @@
   .item{
     text-align: center;
     flex: 0 1 48%;
+    .speed{
+      path{
+        fill: var(--background-color);
+      }
+    }
     svg{
       height: 60px;
       width: 60px;
+      path{
+        fill: var(--foreground-color);
+        stroke: var(--foreground-color);
+      }
     }
     p{
       margin-top: .6em;

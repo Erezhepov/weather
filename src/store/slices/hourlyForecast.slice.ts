@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {HourlyWeatherState} from "../../models/hourlyWeather.models";
-import {hourlyWeatherThunk} from "../thunks/hourlyWeather.thunk";
+import {HourlyForecastState} from "../../models/hourlyForecast.models";
+import {hourlyForecastThunk} from "../thunks/hourlyForecast.thunk";
 
-const initialState: HourlyWeatherState = {
+const initialState: HourlyForecastState = {
     loading: false,
     error: null,
     city: {
@@ -12,27 +12,27 @@ const initialState: HourlyWeatherState = {
     message: null
 }
 
-export const hourlyWeatherSlice = createSlice({
+export const hourlyForecastSlice = createSlice({
     name: 'hourlyWeatherSlice',
     initialState,
     reducers: {},
     extraReducers: builder => {
-        builder.addCase(hourlyWeatherThunk.pending, state => {
+        builder.addCase(hourlyForecastThunk.pending, state => {
             state.loading = true
             state.error = null
         })
-        builder.addCase(hourlyWeatherThunk.fulfilled, (state, {payload}) => {
+        builder.addCase(hourlyForecastThunk.fulfilled, (state, {payload}) => {
             state.loading = false
             state.error = null
-            state.list = payload.list.slice(0, 5)
+            state.list = payload.list.slice(0, 6 )
             state.message = payload.message
             state.city = payload.city
         })
-        builder.addCase(hourlyWeatherThunk.rejected, (state, {payload}) => {
+        builder.addCase(hourlyForecastThunk.rejected, (state, {payload}) => {
             state.loading = false
             payload ? state.error = payload : state.error = null
         })
     }
 })
 
-export const {reducer} = hourlyWeatherSlice
+export const {reducer} = hourlyForecastSlice

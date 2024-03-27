@@ -6,12 +6,17 @@
     width: 36em;
     padding: 5px 2em;
     border-radius: 40px;
-    border: 1px solid #000;
-    background: #f5f5f5;
+    border: 1px solid var(--primary-color);
+    background: var(--background-color);
     transition: all .3s;
     &:focus{
       transition: box-shadow .3s;
       box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.25);
     }
+  }
+  button{
+    background-color: var(--foreground-color);
+    border: 2px solid var(--foreground-color);
+    color: #ffffff;
   }
 }

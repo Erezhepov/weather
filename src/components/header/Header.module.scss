@@ -2,7 +2,7 @@
   position: relative;
   z-index: 10;
   padding: 2em 0;
-  color: #2a2a2a;
+  color: var(--primary-color);
 }
 .items{
   display: flex;

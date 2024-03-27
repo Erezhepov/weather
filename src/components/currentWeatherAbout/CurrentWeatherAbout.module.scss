@@ -1,9 +1,9 @@
 .content{
   padding: 24px;
   width: 38%;
-  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.50);
+  box-shadow: 7px 7px 10px 0 var(--foreground-color);
   border-radius: 30px;
-  background: #f3f3f3;
+  background: var(--background-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
