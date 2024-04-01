@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './CurrentWeather.module.scss'
-import {useAppSelector} from "../../hooks/hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 import Icon from '../imageIcon/Icon';
 import CurrentWeatherInfo from "../currentWeatherInfo/CurrentWeatherInfo";
+import {currentWeatherThunk} from "../../store/thunks/currentWeather.thunk";
 
-const CurrentWeather = () => {
-    const {temp, weather, feels_like} = useAppSelector(state => state.currentWeather)
+const CurrentWeather = React.memo(() => {
+    console.log('CurrentWeather')
+    const dispatch = useAppDispatch()
+    const temp = useAppSelector(state => state.currentWeather.temp)
+    const weather = useAppSelector(state => state.currentWeather.weather)
+    const feels_like = useAppSelector(state => state.currentWeather.feels_like)
+
+    useEffect(() => {
+        dispatch(currentWeatherThunk('astana'))
+    }, [dispatch]);
 
     return (
         <div className={s.info}>
@@ -17,6 +26,6 @@ const CurrentWeather = () => {
             <CurrentWeatherInfo />
         </div>
     );
-};
+});
 
 export default CurrentWeather;

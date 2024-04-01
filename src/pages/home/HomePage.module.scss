@@ -1,10 +1,7 @@
-.homePage{
-  position: relative;
-  overflow-x: hidden;
-}
+
 .items{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 2.77em;
+  row-gap: 1.3em;
 }

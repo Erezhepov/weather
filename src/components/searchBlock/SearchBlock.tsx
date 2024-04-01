@@ -5,8 +5,8 @@ import {currentWeatherThunk} from "../../store/thunks/currentWeather.thunk";
 
 const SearchBlock = () => {
     const [data, setData] = useState('')
-    const changeData = (e: ChangeEvent<HTMLInputElement>) => setData(e.target.value)
     const dispatch = useAppDispatch()
+    const changeData = (e: ChangeEvent<HTMLInputElement>) => setData(e.target.value)
     const send = () => {
         if (data.length > 0){
             dispatch(currentWeatherThunk(data))
@@ -14,7 +14,7 @@ const SearchBlock = () => {
         }
     }
     const sendEnter = (e:  React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && data.length){
+        if (e.key === 'Enter' && data.length > 0){
             dispatch(currentWeatherThunk(data))
             setData('')
         }
@@ -23,7 +23,7 @@ const SearchBlock = () => {
     return (
         <div className={s.searchBlock}>
             <input onKeyPress={sendEnter} placeholder={'Search Location...'} onChange={changeData} value={data} type="text"/>
-            <button onClick={send} type={'submit'}>Find</button>
+            <button disabled={!data.length} onClick={send} type={'submit'}>Find</button>
         </div>
     );
 };

@@ -5,18 +5,15 @@ import ToggleTheme from "../toggleTheme/ToggleTheme";
 
 interface IHeader {
     isDark: boolean,
-    setIsDark: any
+    setIsDark: (isDark: boolean) => void
 }
 
 const Header: FC<IHeader> = ({isDark, setIsDark}) => {
-
     return (
         <header className={s.header}>
-            <div className="container">
-                <div className={s.items}>
-                    <ToggleTheme toggleChange={() => setIsDark(!isDark)} isChecked={isDark} />
-                    <SearchBlock />
-                </div>
+            <div className={`container ${s.items}` }>
+                <ToggleTheme toggleChange={() => setIsDark(!isDark)} isChecked={isDark} />
+                <SearchBlock />
             </div>
         </header>
     );

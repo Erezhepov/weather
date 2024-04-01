@@ -1,8 +1,8 @@
-import React, {FC} from 'react';
+import React, {ChangeEventHandler, FC} from 'react';
 import s from './ToggleTheme.module.scss'
 
 interface IToggleTheme {
-    toggleChange: any,
+    toggleChange: ChangeEventHandler,
     isChecked: boolean
 }
 

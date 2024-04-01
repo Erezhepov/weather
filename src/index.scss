@@ -46,7 +46,11 @@ p {
 body{
 	margin: 0;
 }
+main{
+	unicode-bidi: normal;
+}
 .wrapper {
+	min-height: 100vh;
 	transition: all .3s;
 	margin: 0;
 	padding: 0;

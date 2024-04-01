@@ -3,14 +3,17 @@ import s from './HourlyForecast.module.scss'
 import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 import {hourlyForecastThunk} from "../../store/thunks/hourlyForecast.thunk";
 import Icon from "../imageIcon/Icon";
+import {toast} from "react-toastify";
 
-const HourlyForecast = () => {
-    const {name} = useAppSelector(state => state.currentWeather)
+const HourlyForecast = React.memo(() => {
+    const name = useAppSelector(state => state.currentWeather.name)
+    const error = useAppSelector(state => state.hourlyWeather.error)
     const {list} = useAppSelector(state => state.hourlyWeather)
     const dispatch = useAppDispatch()
     useEffect(() => {
         name && dispatch(hourlyForecastThunk(name))
     }, [name]);
+    error && toast.error(error)
     return (
         <div className={s.body}>
             <h2 className="title">Hourly Forecast:</h2>
@@ -28,6 +31,6 @@ const HourlyForecast = () => {
             </div>
         </div>
     );
-};
+});
 
 export default HourlyForecast;
