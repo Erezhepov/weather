@@ -9,6 +9,21 @@
   justify-content: space-between;
   align-items: center;
   color: var(--primary-color);
+  @media (max-width: 1024px) {
+    justify-content: start;
+    column-gap: 4em;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 1em;
+    width: 100%;
+  }
+  @media (max-width: 529px) {
+    padding: 20px 10px;
+    row-gap: 0;
+  }
   .degree, .feelsLike{
     background: linear-gradient(80deg, var(--primary-color) -2.93%, var(--primary-color) 212.44%);
     background-clip: text;
@@ -22,7 +37,7 @@
     color: var(--primary-color);
   }
   .feelsLike{
-    margin-top: -11px;
+    margin-top: -7px;
     padding-left: .5em;
     font-size: 1.1em;
     font-weight: 600;
@@ -36,5 +51,9 @@
     margin-left: -2em;
     -webkit-filter: drop-shadow(3px 3px 3px #000);
     filter: drop-shadow(3px 3px 3px #000);
+    @media (max-width: 1300px){
+      width: 9em;
+      margin-left: 0;
+    }
   }
 }

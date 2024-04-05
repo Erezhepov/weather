@@ -6,7 +6,6 @@ import HourlyForecast from "../../components/HourlyForecast/HourlyForecast";
 import {ToastContainer} from "react-toastify";
 
 const HomePage = React.memo(() => {
-    console.log('HomePage')
     return (
         <>
             <ToastContainer position="top-left" autoClose={5000}/>
@@ -15,7 +14,6 @@ const HomePage = React.memo(() => {
                     <CurrentWeatherAbout />
                     <CurrentWeather />
                     <HourlyForecast />
-                    {/*<DailyForecast />*/}
                 </div>
             </main>
         </>

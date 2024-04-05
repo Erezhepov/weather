@@ -5,15 +5,14 @@ import Icon from '../imageIcon/Icon';
 import CurrentWeatherInfo from "../currentWeatherInfo/CurrentWeatherInfo";
 import {currentWeatherThunk} from "../../store/thunks/currentWeather.thunk";
 
-const CurrentWeather = React.memo(() => {
-    console.log('CurrentWeather')
+const CurrentWeather = () => {
     const dispatch = useAppDispatch()
     const temp = useAppSelector(state => state.currentWeather.temp)
     const weather = useAppSelector(state => state.currentWeather.weather)
     const feels_like = useAppSelector(state => state.currentWeather.feels_like)
 
     useEffect(() => {
-        dispatch(currentWeatherThunk('astana'))
+        dispatch(currentWeatherThunk(JSON.parse(String(localStorage.getItem("city"))) || 'astana'))
     }, [dispatch]);
 
     return (
@@ -26,6 +25,6 @@ const CurrentWeather = React.memo(() => {
             <CurrentWeatherInfo />
         </div>
     );
-});
+};
 
 export default CurrentWeather;

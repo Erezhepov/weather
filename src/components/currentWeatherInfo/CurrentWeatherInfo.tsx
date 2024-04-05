@@ -8,8 +8,6 @@ const CurrentWeatherInfo = () => {
     return (
         <div className={s.content}>
             <div className={s.body}>
-                {/*<p className={s.maxTemp}>Temp max <span>{state.temp_max && Math.round(state.temp_max)}°C</span></p>*/}
-                {/*<p className={s.minTemp}>Temp min <span>{state.temp_min && Math.round(state.temp_min)}°C</span></p>*/}
                 <div className={s.item}>
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 322.881 322.881"><g>
                         <path d="M161.288,106.839c-3.304,2.498-3.957,7.201-1.459,10.506c18.253,24.142,48.873,70.369,48.873,108.734
@@ -55,8 +53,7 @@ const CurrentWeatherInfo = () => {
                 </div>
                 <div className={s.item}>
                     <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                         viewBox="0 0 188.377 188.377" >
-<g>
+                         viewBox="0 0 188.377 188.377" ><g>
 	<g>
 		<g>
 			<path d="M158.717,24.669c-5.23-12.101-17.528-20.058-31.432-20.058c-17.526,0-32,12.741-33.825,29.07
@@ -77,7 +74,7 @@ const CurrentWeatherInfo = () => {
 		</g>
 	</g>
 </g>
-</svg>
+                    </svg>
                     <p className={s.cloudy}><span>{state.pressure && state.pressure}hPa</span> <br/>Pressure</p>
                 </div>
             </div>

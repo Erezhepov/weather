@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import s from './HourlyForecast.module.scss'
 import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 import {hourlyForecastThunk} from "../../store/thunks/hourlyForecast.thunk";
-import Icon from "../imageIcon/Icon";
 import {toast} from "react-toastify";
+import HourlyForecastItem from "../hourlyForecastItem/HourlyForecastItem";
 
-const HourlyForecast = React.memo(() => {
+const HourlyForecast = () => {
     const name = useAppSelector(state => state.currentWeather.name)
     const error = useAppSelector(state => state.hourlyWeather.error)
-    const {list} = useAppSelector(state => state.hourlyWeather)
+    const list  = useAppSelector(state => state.hourlyWeather.list)
     const dispatch = useAppDispatch()
     useEffect(() => {
         name && dispatch(hourlyForecastThunk(name))
@@ -18,19 +18,10 @@ const HourlyForecast = React.memo(() => {
         <div className={s.body}>
             <h2 className="title">Hourly Forecast:</h2>
             <div className={s.items}>
-                {list.map((item, index) => {
-                    return <div key={index} className={s.item}>
-                        <div className={s.time}>{item.dt_txt && item.dt_txt.slice(10,16)}</div>
-                        <div className={s.icon}>
-                            <Icon icon={item.weather[0].icon} />
-                        </div>
-                        <p className={s.temp}>{item.main.temp && Math.round(item.main.temp - 273.15)}°C</p>
-                        <p className={s.speed}>{item.wind.speed && Math.round(item.wind.speed)}km/h</p>
-                    </div>
-                })}
+                {list.map((item, index) => <HourlyForecastItem item={item} key={index}/>)}
             </div>
         </div>
     );
-});
+};
 
 export default HourlyForecast;

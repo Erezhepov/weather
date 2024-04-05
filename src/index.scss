@@ -53,7 +53,7 @@ main{
 	min-height: 100vh;
 	transition: all .3s;
 	margin: 0;
-	padding: 0;
+	padding: 0 0 .9em 0;
 	box-sizing: border-box;
 	font-size: 18px;
 	font-family: "Roboto", sans-serif;
@@ -115,4 +115,27 @@ button {
 .title{
 	font-size: 1.77em;
 	font-weight: 700;
+}
+
+@media (max-width: 1300px) {
+	.container{
+		max-width: 990px;
+	}
+}
+@media (max-width: 1024px) {
+	.wrapper{
+		font-size: 16px;
+	}
+	.container{
+		max-width: 738px;
+	}
+}
+@media (max-width: 768px) {
+	.wrapper{
+		font-size: 15px;
+	}
+	.container{
+		padding: 0 15px;
+		max-width: 100%;
+	}
 }
