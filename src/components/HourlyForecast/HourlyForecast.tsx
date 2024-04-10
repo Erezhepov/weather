@@ -12,7 +12,7 @@ const HourlyForecast = () => {
     const dispatch = useAppDispatch()
     useEffect(() => {
         name && dispatch(hourlyForecastThunk(name))
-    }, [name]);
+    }, [name, dispatch]);
     error && toast.error(error)
     return (
         <div className={s.body}>
