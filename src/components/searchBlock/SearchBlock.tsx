@@ -6,7 +6,7 @@ import useLocalStorage from "use-local-storage";
 
 const SearchBlock = () => {
     const [data, setData] = useState('')
-    const [value, setValue] = useLocalStorage('city', '')
+    const [, setValue] = useLocalStorage('city', '')
     const dispatch = useAppDispatch()
     const changeData = (e: ChangeEvent<HTMLInputElement>) => setData(e.target.value)
     const send = () => {
