@@ -1,6 +1,6 @@
 .searchBlock{
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   column-gap: 2em;
   @media (max-width: 1024px) {
     align-items: center;
