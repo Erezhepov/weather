@@ -2,7 +2,7 @@
   "name": "anime",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://erezhepov.github.io/weather",
+  "homepage": "https://Erezhepov.github.io/weather",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
