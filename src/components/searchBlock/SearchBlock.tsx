@@ -1,10 +1,11 @@
 import React, {ChangeEvent, useState} from 'react';
 import s from "./SearchBlock.module.scss";
-import {useAppDispatch} from "../../hooks/hooks";
+import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
 import {currentWeatherThunk} from "../../store/thunks/currentWeather.thunk";
 import useLocalStorage from "use-local-storage";
 
 const SearchBlock = () => {
+    const city = useAppSelector(state => state.currentWeather.name)
     const [data, setData] = useState('')
     const [, setValue] = useLocalStorage('city', '')
     const dispatch = useAppDispatch()
@@ -12,14 +13,14 @@ const SearchBlock = () => {
     const send = () => {
         if (data.length > 0){
             dispatch(currentWeatherThunk(data))
-            setValue(data)
+            setValue(city)
             setData('')
         }
     }
     const sendEnter = (e:  React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter' && data.length > 0){
             dispatch(currentWeatherThunk(data))
-            setValue(data)
+            setValue(city)
             setData('')
         }
     }

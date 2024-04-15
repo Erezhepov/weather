@@ -1,6 +1,6 @@
 .body{
   font-family: var(--font_family);
-  padding: 25px;
+  padding: 15px 25px;
   box-shadow: 7px 7px 10px 0 rgba(0,0,0,0.5);
   border-radius: 30px;
   background: var(--background-color);
@@ -14,7 +14,7 @@
   }
 }
 .items{
-  margin-top: 1.4em;
+  margin-top: 1em;
   display: flex;
   justify-content: space-between;
   @media (max-width: 1024px) {
